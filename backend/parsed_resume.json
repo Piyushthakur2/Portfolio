@@ -1,0 +1,67 @@
+{
+  "name": "Piyush Thakur",
+  "email": "piyushh1915@gmail.com",
+  "phone": "+91-9805751939",
+  "total_experience_years": null,
+  "skills": [
+    "C",
+    "C++",
+    "Python",
+    "Java",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "MongoDB",
+    "MySQL",
+    "RESTful APIs",
+    "ReactJS",
+    "NodeJS",
+    "Git",
+    "Linux",
+    "React",
+    "Node.js",
+    "Express",
+    "Tailwind CSS",
+    "Socket.io",
+    "Streamlit",
+    "XGBoost",
+    "MUI",
+    "DataDog",
+    "SQL",
+    "Autosys",
+    "DSA",
+    "DBMS",
+    "Operating Systems",
+    "Computer Networks and Security",
+    "OOPS",
+    "AI",
+    "Machine Learning"
+  ],
+  "experiences": [
+    {
+      "company": "Gemini Solutions Pvt. Ltd.",
+      "role": "Software Developer Intern",
+      "duration": null,
+      "description": "Ensured high availability of production systems by managing data pipelines, monitoring infrastructure metrics, resolving incidents, and automating repetitive operational workflows using Python, DataDog, SQL and Autosys.",
+      "skills_used": [
+        "Python",
+        "DataDog",
+        "SQL",
+        "Autosys"
+      ]
+    }
+  ],
+  "education": [
+    "B.E. Computer Science & Engineering, Chandigarh College Of Engineering and Technology, 2022-26, CGPA: 7.97"
+  ],
+  "projects": [
+    "CodeSync – React, Node.js, Express, Tailwind CSS, Socket.io – Developed a real-time collaborative code editor supporting 50+ concurrent users in a single room; implemented live code execution, file management, syntax highlighting, and live group chat with customizable themes.",
+    "CropXpert – HTML, CSS, Python, Streamlit, XGBoost – Developed a crop prediction tool for Indian agriculture (22+ unique crops) achieving 99.32% accuracy; integrated data visualizations for enhanced decision-making.",
+    "WhizChat – React, MUI, Tailwind, Node, Express, MongoDB, Socket.IO – Developed a real-time messaging app supporting 1:1 and group chats using Socket.IO; integrated file sharing (images, videos, audio) and online user status."
+  ],
+  "certifications": [
+    "Neural Networks and Deep Learning",
+    "Convolutional Neural Networks",
+    "Linear Algebra for Machine Learning and Data Science"
+  ]
+}
