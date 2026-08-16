@@ -1,4 +1,5 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL =
+    import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 export async function streamChat(
     question,
@@ -45,7 +46,6 @@ export async function streamChat(
     let buffer = "";
 
     while (true) {
-
         const { value, done } =
             await reader.read();
 
@@ -67,7 +67,6 @@ export async function streamChat(
             events.pop() || "";
 
         for (const event of events) {
-
             if (!event.startsWith("data:")) {
                 continue;
             }
