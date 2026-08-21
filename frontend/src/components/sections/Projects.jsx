@@ -197,7 +197,7 @@ function Projects() {
                         >
                             Things I&apos;ve
                             <br />
-                            <span className="text-zinc-400">
+                            <span className="text-zinc-500">
                                 built.
                             </span>
                         </h1>
