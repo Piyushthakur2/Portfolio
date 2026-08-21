@@ -161,7 +161,7 @@ function Projects() {
                                 font-medium
                                 uppercase
                                 tracking-[0.3em]
-                                text-zinc-400
+                                text-zinc-500
                             "
                         >
                             Selected work
@@ -172,7 +172,7 @@ function Projects() {
                                 text-[10px]
                                 uppercase
                                 tracking-[0.2em]
-                                text-zinc-400
+                                text-zinc-500
                             "
                         >
                             04 projects
