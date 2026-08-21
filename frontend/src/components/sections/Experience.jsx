@@ -636,7 +636,7 @@ function Experience() {
                                                 {item}
                                             </span>
 
-                                            <ArrowUpRight
+                                            {/* <ArrowUpRight
                                                 size={14}
                                                 className="
                                                     text-zinc-700
@@ -646,7 +646,7 @@ function Experience() {
                                                     group-hover:translate-x-0.5
                                                     group-hover:text-[#7f8fff]
                                                 "
-                                            />
+                                            /> */}
 
                                         </div>
 
