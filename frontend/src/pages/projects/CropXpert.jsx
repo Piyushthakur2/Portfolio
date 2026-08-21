@@ -7,6 +7,7 @@ import {
     Brain,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO";
 
 const technologies = [
     "Python",
@@ -19,6 +20,12 @@ const technologies = [
 function CropXpert() {
     return (
         <div className="min-h-screen bg-[#f5f5f1] text-zinc-950">
+
+            <SEO
+    title="CropXpert — Machine Learning Application"
+    description="CropXpert is a machine learning application that recommends crops using soil and environmental parameters."
+    path="/work/cropxpert"
+/>
 
             {/* Navigation */}
 

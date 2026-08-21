@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 
 import Navbar from "../components/layout/Navbar";
 import { streamChat } from "../services/api";
+import SEO from "../components/SEO";
 
 
 const suggestedPrompts = [
@@ -281,6 +282,12 @@ function AI() {
                 lg:px-16
             "
         >
+
+            <SEO
+                title="Ask Piyush — AI Portfolio Assistant"
+                description="Ask Piyush's AI assistant about his experience, projects, skills and technical background."
+                path="/ai"
+            />
 
             <Navbar />
 

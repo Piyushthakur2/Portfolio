@@ -10,6 +10,7 @@ import {
     CheckCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO";
 
 const features = [
     {
@@ -55,6 +56,12 @@ const technologies = [
 function WhizChat() {
     return (
         <div className="min-h-screen bg-[#111214] text-white">
+
+            <SEO
+    title="WhizChat — Real-Time Chat Application"
+    description="WhizChat is a full-stack real-time communication platform built with React, Node.js, MongoDB and Socket.IO."
+    path="/work/whizchat"
+/>
 
             {/* Navigation */}
 

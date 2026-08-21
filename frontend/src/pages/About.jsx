@@ -2,10 +2,17 @@ import Navbar from "../components/layout/Navbar";
 import Experience from "../components/sections/Experience";
 import Skills from "../components/sections/Skills";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 
 function About() {
     return (
         <div className="min-h-screen bg-[#111214] text-white">
+
+            <SEO
+                title="About Piyush Thakur — Software Engineer"
+                description="Learn about Piyush Thakur, his technical background, software engineering skills and current areas of focus."
+                path="/about"
+            />
 
             <Navbar />
 

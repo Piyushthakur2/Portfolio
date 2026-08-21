@@ -306,9 +306,8 @@ function Hero() {
                                 sm:text-lg
                             "
                         >
-                            I build full-stack applications,
-                            experiment with AI, and care about
-                            how software feels to use.
+                            Software engineer building full-stack
+                            applications and AI-powered systems.
                         </motion.p>
 
 

@@ -5,19 +5,53 @@ import {
     useLocation,
 } from "react-router-dom";
 
-import { useEffect } from "react";
-
-import Home from "./pages/Home";
-import Work from "./pages/Work";
-import About from "./pages/About";
-import AI from "./pages/AI";
-import Contact from "./pages/Contact";
-
-import CodeSync from "./pages/projects/CodeSync";
-import WhizChat from "./pages/projects/WhizChat";
-import CropXpert from "./pages/projects/CropXpert";
+import {
+    lazy,
+    Suspense,
+    useEffect,
+} from "react";
 
 import PageTransition from "./components/layout/PageTransition";
+
+/* ========================================================= */
+/* LAZY LOADED PAGES */
+/* ========================================================= */
+
+const Home = lazy(() => import("./pages/Home"));
+const Work = lazy(() => import("./pages/Work"));
+const About = lazy(() => import("./pages/About"));
+const AI = lazy(() => import("./pages/AI"));
+const Contact = lazy(() => import("./pages/Contact"));
+
+/* Project pages */
+
+const CodeSync = lazy(
+    () => import("./pages/projects/CodeSync")
+);
+
+const WhizChat = lazy(
+    () => import("./pages/projects/WhizChat")
+);
+
+const CropXpert = lazy(
+    () => import("./pages/projects/CropXpert")
+);
+
+
+/* ========================================================= */
+/* LOADING FALLBACK */
+/* ========================================================= */
+
+function PageLoader() {
+    return (
+        <div
+            className="
+                min-h-screen
+                bg-[#f8f8f7]
+            "
+        />
+    );
+}
 
 
 /* ========================================================= */
@@ -40,6 +74,21 @@ function ScrollToTop() {
 
 
 /* ========================================================= */
+/* ROUTE WRAPPER */
+/* ========================================================= */
+
+function Page({ children }) {
+    return (
+        <PageTransition>
+            <Suspense fallback={<PageLoader />}>
+                {children}
+            </Suspense>
+        </PageTransition>
+    );
+}
+
+
+/* ========================================================= */
 /* APP */
 /* ========================================================= */
 
@@ -51,6 +100,7 @@ function App() {
 
             <ScrollToTop />
 
+
             <Routes>
 
                 {/* ================================================= */}
@@ -60,9 +110,9 @@ function App() {
                 <Route
                     path="/"
                     element={
-                        <PageTransition>
+                        <Page>
                             <Home />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 
@@ -70,9 +120,9 @@ function App() {
                 <Route
                     path="/work"
                     element={
-                        <PageTransition>
+                        <Page>
                             <Work />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 
@@ -80,9 +130,9 @@ function App() {
                 <Route
                     path="/about"
                     element={
-                        <PageTransition>
+                        <Page>
                             <About />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 
@@ -90,9 +140,9 @@ function App() {
                 <Route
                     path="/ai"
                     element={
-                        <PageTransition>
+                        <Page>
                             <AI />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 
@@ -100,9 +150,9 @@ function App() {
                 <Route
                     path="/contact"
                     element={
-                        <PageTransition>
+                        <Page>
                             <Contact />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 
@@ -114,9 +164,9 @@ function App() {
                 <Route
                     path="/work/codesync"
                     element={
-                        <PageTransition>
+                        <Page>
                             <CodeSync />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 
@@ -124,9 +174,9 @@ function App() {
                 <Route
                     path="/work/whizchat"
                     element={
-                        <PageTransition>
+                        <Page>
                             <WhizChat />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 
@@ -134,9 +184,9 @@ function App() {
                 <Route
                     path="/work/cropxpert"
                     element={
-                        <PageTransition>
+                        <Page>
                             <CropXpert />
-                        </PageTransition>
+                        </Page>
                     }
                 />
 

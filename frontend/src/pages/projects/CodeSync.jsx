@@ -9,6 +9,8 @@ import {
     MessageCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO";
+
 
 const features = [
     {
@@ -52,6 +54,12 @@ const technologies = [
 function CodeSync() {
     return (
         <div className="min-h-screen bg-[#111214] text-white">
+
+            <SEO
+    title="CodeSync — Collaborative Code Editor"
+    description="CodeSync is a real-time collaborative code editing application built with React, Node.js, Express and Socket.IO."
+    path="/work/codesync"
+/>
 
             {/* Navigation */}
 

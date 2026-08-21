@@ -1,9 +1,16 @@
 import { Mail, Phone } from "lucide-react";
 import Navbar from "../components/layout/Navbar";
+import SEO from "../components/SEO";
 
 function Contact() {
     return (
         <main className="min-h-screen bg-[#111214] text-white">
+
+            <SEO
+                title="Contact Piyush Thakur"
+                description="Get in touch with Piyush Thakur about software engineering opportunities, projects and collaboration."
+                path="/contact"
+            />
 
             <Navbar />
 
