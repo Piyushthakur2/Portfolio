@@ -7,9 +7,7 @@ import {
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-
 function Hero() {
-
     const navigate = useNavigate();
 
     const [mouse, setMouse] = useState({
@@ -17,71 +15,54 @@ function Hero() {
         y: 50,
     });
 
-
     useEffect(() => {
-
         const handleMouseMove = (event) => {
-
             setMouse({
                 x: (event.clientX / window.innerWidth) * 100,
                 y: (event.clientY / window.innerHeight) * 100,
             });
-
         };
-
 
         window.addEventListener(
             "mousemove",
             handleMouseMove
         );
 
-
         return () => {
-
             window.removeEventListener(
                 "mousemove",
                 handleMouseMove
             );
-
         };
-
     }, []);
-
 
     /*
      * Navigate to Work page
      */
 
     const goToWork = () => {
-
         navigate("/work");
 
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
-
     };
-
 
     /*
      * Navigate to AI page
      */
 
     const goToAI = () => {
-
         navigate("/ai");
 
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
-
     };
 
-
     return (
-
         <section
             className="
                 relative
@@ -136,7 +117,6 @@ function Hero() {
                 }}
             />
 
-
             <motion.div
                 animate={{
                     x: [0, -20, 0],
@@ -163,7 +143,6 @@ function Hero() {
                 }}
             />
 
-
             {/* ===================================================== */}
             {/* Small ambient details */}
             {/* ===================================================== */}
@@ -183,7 +162,6 @@ function Hero() {
                 "
             />
 
-
             <div
                 className="
                     pointer-events-none
@@ -198,7 +176,6 @@ function Hero() {
                     lg:block
                 "
             />
-
 
             {/* ===================================================== */}
             {/* Main content */}
@@ -463,56 +440,6 @@ function Hero() {
 
                         </motion.div>
 
-
-                        {/* Mobile AI entry point */}
-
-                        <motion.button
-                            onClick={goToAI}
-                            initial={{
-                                opacity: 0,
-                                y: 10,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            transition={{
-                                duration: 0.7,
-                                delay: 0.9,
-                            }}
-                            className="
-                                mt-5
-                                flex
-                                w-full
-                                items-center
-                                justify-center
-                                gap-2
-                                rounded-full
-                                border
-                                border-black/[0.07]
-                                bg-white/[0.35]
-                                px-4
-                                py-3
-                                text-xs
-                                font-medium
-                                text-zinc-600
-                                backdrop-blur-xl
-                                transition-all
-                                duration-300
-                                hover:bg-white/60
-                                lg:hidden
-                            "
-                        >
-                            <Sparkles
-                                size={13}
-                                className="text-[#4f6fff]"
-                            />
-
-                            Ask my AI
-
-                            <ArrowUpRight size={13} />
-
-                        </motion.button>
 
                     </div>
 
@@ -795,6 +722,5 @@ function Hero() {
         </section>
     );
 }
-
 
 export default Hero;

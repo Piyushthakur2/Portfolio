@@ -153,7 +153,7 @@ function AI() {
                         if (
                             lastMessage &&
                             lastMessage.role ===
-                                "assistant"
+                            "assistant"
                         ) {
 
                             updated[lastIndex] = {
@@ -341,44 +341,16 @@ function AI() {
                     className="max-w-4xl"
                 >
 
-                    <div className="flex items-center justify-between">
-
-                        <p
-                            className="
-                                text-[10px]
-                                uppercase
-                                tracking-[0.3em]
-                                text-zinc-600
-                            "
-                        >
-                            Personal AI
-                        </p>
-
-
-                        {hasMessages && (
-
-                            <button
-                                onClick={handleNewChat}
-                                className="
-                                    flex
-                                    items-center
-                                    gap-2
-                                    text-[10px]
-                                    uppercase
-                                    tracking-[0.18em]
-                                    text-zinc-600
-                                    transition-colors
-                                    duration-300
-                                    hover:text-zinc-300
-                                "
-                            >
-                                <RotateCcw size={12} />
-                                New chat
-                            </button>
-
-                        )}
-
-                    </div>
+                    <p
+                        className="
+        text-[10px]
+        uppercase
+        tracking-[0.3em]
+        text-zinc-600
+    "
+                    >
+                        Personal AI
+                    </p>
 
 
                     <h1
@@ -514,18 +486,39 @@ function AI() {
                         </div>
 
 
-                        <span
-                            className="
-                                hidden
-                                text-[9px]
-                                uppercase
-                                tracking-[0.2em]
-                                text-zinc-700
-                                sm:block
-                            "
-                        >
-                            AI / 01
-                        </span>
+                        {hasMessages ? (
+                            <button
+                                onClick={handleNewChat}
+                                className="
+            flex
+            items-center
+            gap-2
+            text-[10px]
+            uppercase
+            tracking-[0.18em]
+            text-zinc-600
+            transition-colors
+            duration-300
+            hover:text-zinc-300
+        "
+                            >
+                                <RotateCcw size={12} />
+                                New chat
+                            </button>
+                        ) : (
+                            <span
+                                className="
+            hidden
+            text-[9px]
+            uppercase
+            tracking-[0.2em]
+            text-zinc-700
+            sm:block
+        "
+                            >
+                                AI / 01
+                            </span>
+                        )}
 
                     </div>
 
@@ -704,14 +697,14 @@ function AI() {
                                                 }}
                                                 className={
                                                     message.role ===
-                                                    "user"
+                                                        "user"
                                                         ? "flex justify-end"
                                                         : "flex justify-start"
                                                 }
                                             >
 
                                                 {message.role ===
-                                                "user" ? (
+                                                    "user" ? (
 
                                                     <div
                                                         className="
@@ -812,13 +805,13 @@ function AI() {
 
                                                         {loading &&
                                                             index ===
-                                                                messages.length -
-                                                                    1 &&
+                                                            messages.length -
+                                                            1 &&
                                                             message.content && (
 
                                                                 <span className="streaming-cursor ml-1 inline-block h-4 w-px translate-y-1 bg-[#7f8fff]" />
 
-                                                        )}
+                                                            )}
 
                                                     </div>
 
