@@ -5,7 +5,7 @@ import {
     useTransform,
     useSpring,
 } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+// import { ArrowUpRight } from "lucide-react";
 
 function Experience() {
     const sectionRef = useRef(null);

@@ -3,10 +3,104 @@ from app.models import Resume
 from app.prompts import interview_prompt
 
 
+REFUSAL_MESSAGE = (
+    "I'm Piyush's portfolio AI, so I can only answer questions about "
+    "Piyush, his experience, skills, projects, education, and "
+    "professional background."
+)
+
+
+def is_portfolio_question(question: str) -> bool:
+    """
+    Basic guardrail to prevent clearly unrelated questions
+    from being sent to the LLM.
+    """
+
+    question_lower = question.lower().strip()
+
+    portfolio_keywords = [
+        # Person
+        "piyush",
+        "your",
+        "you",
+        "yourself",
+        "your experience",
+        "your background",
+
+        # Experience / career
+        "experience",
+        "internship",
+        "intern",
+        "job",
+        "work",
+        "career",
+        "role",
+        "company",
+        "gemini solutions",
+
+        # Skills / technologies
+        "skill",
+        "skills",
+        "technology",
+        "technologies",
+        "tech stack",
+        "programming",
+        "language",
+        "framework",
+        "database",
+        "python",
+        "javascript",
+        "react",
+        "node",
+        "express",
+        "mongodb",
+        "sql",
+        "git",
+        "linux",
+        "streamlit",
+        "xgboost",
+
+        # Projects
+        "project",
+        "projects",
+        "codesync",
+        "whizchat",
+        "cropxpert",
+        "crop recommendation",
+        "portfolio",
+
+        # Education
+        "education",
+        "degree",
+        "college",
+        "university",
+        "ccet",
+        "certification",
+        "certifications",
+
+        # Recruitment / interview
+        "hire",
+        "hiring",
+        "recruiter",
+        "resume",
+        "cv",
+        "candidate",
+        "strength",
+        "weakness",
+        "achievement",
+        "qualification",
+    ]
+
+    return any(keyword in question_lower for keyword in portfolio_keywords)
+
+
 def ask_candidate(question: str, resume: Resume) -> str:
     """
-    Generate a normal response from the candidate profile.
+    Generate a response from the candidate profile.
     """
+
+    if not is_portfolio_question(question):
+        return REFUSAL_MESSAGE
 
     response = client.chat.completions.create(
         model=MODEL_NAME,
@@ -37,6 +131,11 @@ def stream_candidate(
     while preserving conversation context.
     """
 
+    # Reject clearly unrelated questions before calling the LLM
+    if not is_portfolio_question(question):
+        yield REFUSAL_MESSAGE
+        return
+
     # System instructions + verified resume
     messages = [
         {
@@ -54,7 +153,7 @@ def stream_candidate(
             }
         )
 
-    # Add the current question
+    # Add current question
     messages.append(
         {
             "role": "user",
